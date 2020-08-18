@@ -28,6 +28,7 @@ variable "k8s_version" {
 }
 
 variable "ssh_key" {
+  default = "~/.ssh/terraform-key.pub"
   type        = string
   description = "The SSH public key"
 }

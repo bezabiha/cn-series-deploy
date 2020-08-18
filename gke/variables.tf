@@ -15,6 +15,7 @@
 ############################################################################################
 
 variable "project" {
+  default     = "thrucovid19"
   type        = string
   description = "The GCP project ID"
 }

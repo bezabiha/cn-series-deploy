@@ -25,7 +25,7 @@ resource "azurerm_kubernetes_cluster" "default" {
   default_node_pool {
     name               = "default"
     node_count         = 2
-    vm_size            = "Standard_D8s_v3"
+    vm_size            = "Standard_DS2_v2"
     vnet_subnet_id     = azurerm_subnet.aks_subnet.id
     availability_zones = ["1", "2"]
   }
@@ -33,7 +33,7 @@ resource "azurerm_kubernetes_cluster" "default" {
   linux_profile {
     admin_username = "ubuntu"
     ssh_key {
-      key_data = var.ssh_key
+      key_data = file(var.ssh_key)
     }
   }
 
